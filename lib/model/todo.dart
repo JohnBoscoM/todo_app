@@ -3,22 +3,22 @@ import 'package:hive/hive.dart';
 import 'board.dart';
 
 class Task {
-  String? id;
-  String description;
+  String title;
   int hours;
-  bool completed;
-  Board board;
+  bool isCompleted;
 
-  Task(
-      {required this.description,
-      required this.hours,
-      required this.completed,
-      required this.board});
+  Task({
+    required this.title,
+    this.hours = 0,
+    required this.isCompleted,
+  });
 
   Task.fromMap(Map map)
-      : id = map['id'],
-        description = map['description'],
+      : title = map['title'],
         hours = map['hours'],
-        completed = map['completed'],
-        board = map['Board'];
+        isCompleted = map['isCompleted'];
+
+  Map toMap() {
+    return {'title': title, 'hours': hours, 'isCompleted': isCompleted};
+  }
 }

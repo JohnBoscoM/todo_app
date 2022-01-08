@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:todo_app/view/add_task.dart';
+import 'package:todo_app/view/timerscreen.dart';
 //import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:todo_app/view/todo_page.dart';
 
@@ -27,17 +29,15 @@ class _NavigationState extends State<NavigationPage> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static final List<dynamic> _widgetOptions = [
-    TodoPage(),
+    TimerScreen(),
     // PlayButton(
     //   pauseIcon: Icon(Icons.pause, color: Colors.black, size: 40),
     //   playIcon: Icon(Icons.play_arrow, color: Colors.black, size: 40),
     //   onPressed: () {},
     // ),
+    AddTaskPage(),
     Center(
-      child: Text("No Playlist found"),
-    ),
-    Center(
-      child: Text("No Playlist found"),
+      child: Text("You"),
     ),
     //  SettingsPage()
   ];
@@ -70,14 +70,15 @@ class _NavigationState extends State<NavigationPage> {
         items: [
           BottomNavigationBarItem(
               icon: Icon(
-                CupertinoIcons.time,
+                CupertinoIcons.home,
                 size: 30,
               ),
-              label: 'Timer'),
+              label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.home, size: 30), label: 'Playlist'),
+              icon: Icon(CupertinoIcons.add_circled_solid, size: 40),
+              label: 'Playlist'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.settings_outlined, size: 30), label: 'Settings'),
+              icon: Icon(Icons.settings_outlined, size: 25), label: 'Settings'),
         ],
       ),
     );
